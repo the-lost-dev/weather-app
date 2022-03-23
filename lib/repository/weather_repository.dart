@@ -6,10 +6,10 @@ import 'package:weather_app/api/weather_api.dart';
 import 'package:weather_app/models/models.dart';
 
 class HttpWeatherRepository {
-  HttpWeatherRepository(
-    this.weatherAPI,
-    this.client,
-  );
+  HttpWeatherRepository({
+    required this.weatherAPI,
+    required this.client,
+  });
 
   final WeatherAPI weatherAPI;
   final http.Client client;
@@ -20,10 +20,10 @@ class HttpWeatherRepository {
         builder: (data) => WeatherModel.fromJson(data),
       );
 
-      //   Future<Forecast> getForecast(String city) => _getData(
-      //   uri: weatherAPI.weather(city),
-      //   builder: (data) => ,
-      // );
+    Future<ForecastModel> getForecast(String city) => _getData(
+    uri: weatherAPI.weather(city),
+    builder: (data) => ForecastModel.fromJson(data),
+  );
 
   /// METHOD TO GET DATA FROM API
   Future<T> _getData<T>({

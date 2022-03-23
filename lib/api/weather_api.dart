@@ -18,7 +18,7 @@ class WeatherAPI {
   /// FORECAST ENDPOINT
   Uri forecast(String city) => _buildURI(
         parametersBuilder: () => cityQueryParameters(city),
-        endpoint: "weather",
+        endpoint: "forecast",
       );
 
   /// BUILD URI (UNIFORM RESOURCE IDENTIFIER)

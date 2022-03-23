@@ -13,13 +13,23 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+
+  ### STATE MANAGEMENT
   flutter_riverpod: ^1.0.3
+  
+  ### NETWORKING
+  http: ^0.13.4
+
+  ### CODE GENERATION
+  build_runner: ^2.1.8
+  json_annotation: ^4.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^1.0.0
+  json_serializable: ^6.1.5
 
 flutter:
 

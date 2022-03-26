@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/utils/utils.dart';
+
+import 'components/components.dart';
 
 class WeatherPage extends StatelessWidget {
   const WeatherPage({Key? key}) : super(key: key);
@@ -9,74 +10,64 @@ class WeatherPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 2,
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: SizeConfig.blockSizeHorizontal * 3,
-                  vertical: SizeConfig.blockSizeVertical * 1.5,
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'New York',
-                              style: GoogleFonts.sora(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ), //TODO: Insert City Name
-                            Text(
-                              'Today, Aug 11 15:05',
-                              style: GoogleFonts.sora(
-                                fontSize: 16,
-                              ),
-                            ), //TODO: Insert Current Date and Time
-                          ],
-                        ),
-                        const Spacer(),
-                        const Icon(Icons.add), //TODO: add search Functionality
-                      ],
-                    ),
-                    SizedBox(
-                      height: SizeConfig.blockSizeVertical * 8,
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(Icons.cloud_circle_outlined),
-                            Text(
-                              'Mostly cloudy',
-                              style: GoogleFonts.sora(
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                          
-                        ),
-                        const Spacer(),
-                        const Text('34\u00B0')
-                      ],
-
-                    ),
-                  ],
+      body: Container(
+        padding: mainPadding,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            colors: [
+              AppColors.primaryColor,
+              AppColors.secondaryColor,
+              AppColors.utilityColor,
+            ],
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              sizedBox4,
+              Text(
+                'San Francisco', //TODO: Name of the region
+                style: Theme.of(context).textTheme.headline1,
+              ),
+              sizedBox2,
+              Text(
+                'May 28, 2021', //TODO: Today's Date
+                style: Theme.of(context).textTheme.headline2,
+              ),
+              sizedBox6,
+              Expanded(
+                flex: 2,
+                child: Icon(
+                  Icons.cloudy_snowing,
+                  size: SizeConfig.blockSizeHorizontal * 50,
                 ),
               ),
-            ),
-            Expanded(
-              child: Container(color: Colors.redAccent),
-            ),
-          ],
+              Row(
+                children: const [
+                  TempDetail(
+                    title: Strings.temp,
+                    subTitle: '32',
+                  ),
+                  TempDetail(
+                    title: Strings.temp,
+                    subTitle: '32\u00B0',
+                  ),
+                  TempDetail(
+                    title: Strings.temp,
+                    subTitle: '32',
+                  ),
+                ],
+              ),
+              Container(
+                height: 50,
+                width: double.infinity, // TODO: WEATHER FORECAST SIDE
+                color: Colors.black,
+              )
+            ],
+          ),
         ),
       ),
     );

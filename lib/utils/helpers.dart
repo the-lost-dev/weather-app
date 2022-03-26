@@ -1,12 +1,13 @@
-class Temperature {
-  Temperature.celsius(this.celsius);
-  factory Temperature.fahrenheit(double fahrenheit) =>
-      Temperature.celsius((fahrenheit - 32) / 1.8);
-  factory Temperature.kelvin(double kelvin) =>
-      Temperature.celsius(kelvin - absoluteZero);
+import 'package:flutter/material.dart';
+import 'package:weather_app/utils/utils.dart';
 
-  static double absoluteZero = 273.15;
+///Widgets
+SizedBox sizedBox2 = SizedBox(height: SizeConfig.blockSizeVertical * 2);
+SizedBox sizedBox4 = SizedBox(height: SizeConfig.blockSizeVertical * 4);
+SizedBox sizedBox6 = SizedBox(height: SizeConfig.blockSizeVertical * 6);
 
-  final double celsius;
-  double get fahrenheit => celsius * 1.8 + 32;
-}
+///Paddings
+EdgeInsets mainPadding = EdgeInsets.symmetric(
+  horizontal: SizeConfig.blockSizeHorizontal * 4,
+  vertical: SizeConfig.blockSizeVertical * 2,
+);

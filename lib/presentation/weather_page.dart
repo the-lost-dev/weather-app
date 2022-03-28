@@ -41,10 +41,13 @@ class WeatherPage extends ConsumerWidget {
               weatherDataValue.when(
                 data: (data) => CurrentWeatherContents(weatherData: data),
                 loading: () => const CircularProgressIndicator(),
-                error: (e, __) => Text(e.toString()),
+                error: (e, __) => Text(
+                  e.toString(),
+                  style: Theme.of(context).textTheme.headline1,
+                ),
               ),
-              // ListView.builder(itemBuilder: itemBuilder),
-              // ForecastItem(day: weatherDataValue.value.date.day, iconURL: iconURL, temp: temp)
+              sizedBox4,
+              const ForecastWeatherRow()
             ],
           ),
         ),

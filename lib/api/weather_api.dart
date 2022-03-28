@@ -6,7 +6,7 @@ class WeatherAPI {
   ///HOW TO MAKE API CALL
   ///https://api.openweathermap.org/data/2.5/weather?q=London&appid={API key}
 
-  static const String _baseURL = "api.openweathermap.org/";
+  static const String _baseURL = "api.openweathermap.org";
   static const String _apiPath = "data/2.5/";
 
   /// WEATHER ENDPOINT

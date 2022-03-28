@@ -6,4 +6,5 @@ class AppColors {
   static const utilityColor = Color(0xFFB8A4C9);
   static const textColor = Color(0xFF212529);
   static const secondaryTextColor = Color(0xFF6C757D);
+  static const weatherCardColor = Color(0xFFE0E1DD);
 }

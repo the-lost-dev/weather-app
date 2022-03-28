@@ -11,3 +11,6 @@ EdgeInsets mainPadding = EdgeInsets.symmetric(
   horizontal: SizeConfig.blockSizeHorizontal * 4,
   vertical: SizeConfig.blockSizeVertical * 2,
 );
+
+EdgeInsets padding4 = const EdgeInsets.all(5);
+

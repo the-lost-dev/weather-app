@@ -27,7 +27,7 @@ class WeatherController extends StateNotifier<AsyncValue<WeatherData>> {
 }
 
 final currentWeatherControllerProvider =
-    StateNotifierProvider<WeatherController, AsyncValue<WeatherData>>((ref) {
+    StateNotifierProvider.autoDispose<WeatherController, AsyncValue<WeatherData>>((ref) {
   final city = ref.watch(cityProvider);
   final weatherRepository = ref.watch(weatherRepositoryProvider);
   return WeatherController(weatherRepository, city: city);

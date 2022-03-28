@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/models/models.dart';
-import 'package:weather_app/presentation/weather_page.dart';
 import 'package:weather_app/utils/utils.dart';
 
 import 'components.dart';
@@ -21,11 +20,6 @@ class CurrentWeatherContents extends ConsumerWidget {
     final humidity = weatherData.humidity.toString();
     return Column(
       children: [
-        ForecastItem(
-          date: weatherData.date,
-          iconURL: weatherData.iconUrl,
-          temp: temp + '\u00B0',
-        ),
         WeatherIcon(iconURL: weatherData.iconUrl),
         Text(
           weatherData.description,

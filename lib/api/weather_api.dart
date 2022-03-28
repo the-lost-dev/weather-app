@@ -26,6 +26,7 @@ class WeatherAPI {
     required Map<String, dynamic> Function() parametersBuilder,
     required String endpoint,
   }) {
+    print(_baseURL + _apiPath + endpoint);
     return Uri(
       scheme: "https",
       host: _baseURL,

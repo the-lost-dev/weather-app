@@ -22,7 +22,7 @@ class ForecastWeatherController
       final weatherForecast = await _weatherRepository.getForecast(city);
       state = AsyncValue.data(ForecastData.from(weatherForecast));
     } catch (e) {
-      print(e);
+      e;
     }
   }
 }

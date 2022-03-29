@@ -20,7 +20,7 @@ class CurrentWeatherContents extends ConsumerWidget {
     final humidity = weatherData.humidity.toString();
     return Column(
       children: [
-        WeatherIcon(iconURL: weatherData.iconUrl),
+        // WeatherIcon(iconURL: weatherData.iconUrl), /// TODO: CC
         Text(
           weatherData.description,
           style: Theme.of(context).textTheme.headline3,

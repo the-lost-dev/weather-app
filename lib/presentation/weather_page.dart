@@ -13,6 +13,7 @@ class WeatherPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final city = ref.watch(cityProvider);
     final weatherDataValue = ref.watch(currentWeatherControllerProvider);
+    final value = ref.watch(forecastWeatherControllerProvider);
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
@@ -47,7 +48,7 @@ class WeatherPage extends ConsumerWidget {
                 ),
               ),
               sizedBox4,
-              const ForecastWeatherRow()
+              // ForecastWeatherRow()
             ],
           ),
         ),

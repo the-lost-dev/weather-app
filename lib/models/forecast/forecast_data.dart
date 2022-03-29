@@ -9,7 +9,10 @@ class ForecastData {
 
   factory ForecastData.from(ForecastModel forecastModel) {
     return ForecastData(
-      list: forecastModel.list.map((data) => WeatherData.from(data)).toList(),
+      list: forecastModel.list.map((data) {
+        print(forecastModel.list.length);
+        return WeatherData.from(data);
+      }).toList(),
     );
   }
 }

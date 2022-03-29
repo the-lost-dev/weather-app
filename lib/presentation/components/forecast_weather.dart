@@ -11,12 +11,13 @@ class ForecastWeatherRow extends ConsumerWidget {
     final forecastDataValue = ref.watch(forecastWeatherControllerProvider);
     return forecastDataValue.when(
       data: (forecastData) {
-        final forecastDays = [0, 8, 16, 24, 32];
-        return ForecastWeatherContents(
-          weatherDataItems: [
-            for (var i in forecastDays) forecastData.list[i],
-          ],
-        );
+        print(forecastData);
+        return Text(forecastData.list.toString());
+        // final forecastDays = [0, 8, 16, 24, 32];
+        // print(forecastData.list.length);
+        // return ForecastWeatherContents(
+        //   weatherDataItems: forecastData.list,
+        // );
       },
       loading: () => const CircularProgressIndicator(),
       error: (e, __) => Text(

@@ -4,8 +4,6 @@ import 'package:weather_app/utils/utils.dart';
 
 import 'components/components.dart';
 
-final cityProvider = StateProvider<String>((ref) => 'Dubai');
-
 class WeatherPage extends ConsumerWidget {
   const WeatherPage({Key? key}) : super(key: key);
 
@@ -13,7 +11,6 @@ class WeatherPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final city = ref.watch(cityProvider);
     final weatherDataValue = ref.watch(currentWeatherControllerProvider);
-    final value = ref.watch(forecastWeatherControllerProvider);
     SizeConfig().init(context);
     return Scaffold(
       body: Container(
@@ -30,25 +27,38 @@ class WeatherPage extends ConsumerWidget {
           ),
         ),
         child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView(
             children: [
-              sizedBox4,
-              Text(
-                city,
-                style: Theme.of(context).textTheme.headline1,
+              sizedBox6,
+              const CitySearchArea(),
+              sizedBox8,
+              Center(
+                child: Text(
+                  city,
+                  style: Theme.of(context).textTheme.headline1,
+                ),
               ),
               sizedBox6,
               weatherDataValue.when(
                 data: (data) => CurrentWeatherContents(weatherData: data),
-                loading: () => const CircularProgressIndicator(),
+                loading: () => const Center(
+                  child: CircularProgressIndicator(
+                    strokeWidth: strokeWidth,
+                    color: AppColors.utilityColor,
+                  ),
+                ),
                 error: (e, __) => Text(
                   e.toString(),
                   style: Theme.of(context).textTheme.headline1,
                 ),
               ),
-              sizedBox4,
-              // ForecastWeatherRow()
+              sizedBox14,
+              Container(
+                padding: horizontalPadding,
+                height: SizeConfig.blockSizeVertical * 20,
+                child: const ForecastWeatherRow(),
+              ),
+              sizedBox6,
             ],
           ),
         ),

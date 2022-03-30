@@ -20,6 +20,7 @@ class ForecastItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
+      margin: padding4,
       padding: padding4,
       width: SizeConfig.blockSizeHorizontal * 35,
       decoration: BoxDecoration(

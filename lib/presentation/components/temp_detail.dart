@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class TempDetail extends StatelessWidget {
@@ -15,6 +14,7 @@ class TempDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             title,

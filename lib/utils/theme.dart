@@ -13,14 +13,17 @@ class WeatherTheme {
     headline2: GoogleFonts.spaceGrotesk(
       fontSize: 20,
       fontWeight: FontWeight.w600,
-      color: AppColors.secondaryTextColor
+      color: AppColors.secondaryTextColor,
     ),
     headline3: GoogleFonts.spaceGrotesk(
       fontSize: 24,
       fontWeight: FontWeight.w600,
-      color: AppColors.textColor
+      color: AppColors.textColor,
     ),
-    
+    bodyText1: GoogleFonts.spaceGrotesk(
+      fontSize: 20,
+      color: AppColors.textColor,
+    ),
   );
 
   static ThemeData weatherTheme() {

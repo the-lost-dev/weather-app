@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather_app/models/forecast/forecast_data.dart';
-import 'package:weather_app/presentation/weather_page.dart';
+import 'package:weather_app/presentation/components/components.dart';
 import 'package:weather_app/providers/top_level_providers.dart';
 import 'package:weather_app/repository/weather_repository.dart';
 
@@ -22,7 +22,7 @@ class ForecastWeatherController
       final weatherForecast = await _weatherRepository.getForecast(city);
       state = AsyncValue.data(ForecastData.from(weatherForecast));
     } catch (e) {
-      e;
+      print(e);
     }
   }
 }

@@ -4,36 +4,36 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'weather_model.g.dart';
 
-
-
-
 @JsonSerializable()
 class WeatherModel {
-
-  WeatherModel({required this.main, required this.weather, required this.wind, required this.dt,});
+  WeatherModel({
+    required this.main,
+    required this.weather,
+    required this.wind,
+    required this.dt,
+  });
 
   final TempParams main;
   final List<WeatherInfo> weather;
   final WindParam wind;
   final int dt;
 
-  factory WeatherModel.fromJson(Map<String, dynamic> json) => _$WeatherModelFromJson(json);
-
-
+  factory WeatherModel.fromJson(Map<String, dynamic> json) =>
+      _$WeatherModelFromJson(json);
 }
 
 @JsonSerializable()
-class WindParam{
+class WindParam {
   const WindParam({
     required this.speed,
   });
-final double speed;
-factory WindParam.fromJson(Map<String, dynamic> json) => _$WindParamFromJson(json);
+  final double speed;
+  factory WindParam.fromJson(Map<String, dynamic> json) =>
+      _$WindParamFromJson(json);
 }
 
 @JsonSerializable()
 class TempParams {
-
   const TempParams({
     required this.temp,
     required this.temp_min,
@@ -46,8 +46,8 @@ class TempParams {
   final double temp_max;
   final int humidity;
 
-  factory TempParams.fromJson(Map<String, dynamic> json) => _$TempParamsFromJson(json);
-
+  factory TempParams.fromJson(Map<String, dynamic> json) =>
+      _$TempParamsFromJson(json);
 }
 
 @JsonSerializable()
@@ -62,5 +62,6 @@ class WeatherInfo {
   final String description;
   final String icon;
 
-  factory WeatherInfo.fromJson(Map<String, dynamic> json) => _$WeatherInfoFromJson(json);
+  factory WeatherInfo.fromJson(Map<String, dynamic> json) =>
+      _$WeatherInfoFromJson(json);
 }

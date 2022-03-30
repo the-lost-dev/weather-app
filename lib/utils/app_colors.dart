@@ -7,4 +7,5 @@ class AppColors {
   static const textColor = Color(0xFF212529);
   static const secondaryTextColor = Color(0xFF6C757D);
   static const weatherCardColor = Color(0xFFE0E1DD);
+  static const searchFillColor = Color(0xFFDEE2E6);
 }

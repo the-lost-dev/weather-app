@@ -6,3 +6,4 @@ export 'forecast_item.dart';
 export 'forecast_weather.dart';
 export 'forecast_weather_controller.dart';
 export 'forecast_weather_contents.dart';
+export 'search_area.dart';

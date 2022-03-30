@@ -20,8 +20,8 @@ class HttpWeatherRepository {
         builder: (data) => WeatherModel.fromJson(data),
       );
 
-    Future<ForecastModel> getForecast(String city) => _getData(
-    uri: weatherAPI.weather(city),
+    Future getForecast(String city) => _getData(
+    uri: weatherAPI.forecast(city),
     builder: (data) => ForecastModel.fromJson(data),
   );
 

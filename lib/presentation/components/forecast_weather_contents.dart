@@ -20,7 +20,8 @@ class ForecastWeatherContents extends ConsumerWidget {
       itemBuilder: (_, index) => ForecastItem(
         date: weatherDataItems[index].date,
         iconURL: weatherDataItems[index].iconUrl,
-        temp: weatherDataItems[index].temp.toString(),
+        temp:
+            weatherDataItems[index].temp.celsius.toInt().toString() + '\u00B0',
       ),
     );
   }
